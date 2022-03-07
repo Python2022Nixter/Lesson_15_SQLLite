@@ -92,3 +92,5 @@ def get_headers(tb:str, db=DB):
         data = cur.execute(f"""PRAGMA table_info({tb})""").fetchall()
         headers = [x[1] for x in data]
         return headers
+
+
