@@ -94,3 +94,9 @@ def get_headers(tb:str, db=DB):
         return headers
 
 
+def get_tables(db=DB):
+    with sql.connect(db) as con:
+        cur = con.cursor()
+        data = cur.execute("""SELECT name FROM sqlite_master WHERE type='table'""").fetchall()
+        tables = [x[0] for x in data]
+        return tables
