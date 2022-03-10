@@ -10,3 +10,5 @@ print(f"Tables in db: {util.get_tables(DB)}")
 print(f"Headers of table '{TABLE_1}': {util.get_headers(TABLE_1, DB)}")
 print(f"Headers of table '{TABLE_2}': {util.get_headers(TABLE_2, DB)}")
 
+print(f"Unique names in db: {util.unique_names_in_db(DB, TABLE_1)}")
+print(f"Unique names in db: {util.unique_names_in_db(DB, TABLE_2)}")

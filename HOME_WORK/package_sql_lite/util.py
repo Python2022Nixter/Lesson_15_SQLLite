@@ -67,10 +67,10 @@ def count_unique_names_in_db(db=DB):
         return count
 
 
-def unique_names_in_db(db=DB):
+def unique_names_in_db(db=DB,tb='test'):
     with sql.connect(db) as con:
         cur = con.cursor()
-        res = cur.execute("""SELECT DISTINCT name FROM test""")
+        res = cur.execute(f"""SELECT DISTINCT name FROM {tb}""")
         names = res.fetchall()
         names = set(names)
         return names
